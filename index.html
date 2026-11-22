@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CampusKart | Student Marketplace</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header>
+
+    <div class="logo">
+        🎓 Campus<span>Kart</span>
+    </div>
+
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#products">Browse</a>
+
+        <a href="#how">How It Works</a>
+
+    </nav>
+
+
+    <button
+        class="login-btn"
+        onclick="openAuth()"
+    >
+        Login / Sign Up
+    </button>
+
+
+    <button
+        class="sell-btn"
+        onclick="openSell()"
+    >
+        + Sell Item
+    </button>
+
+</header>
+
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+
+    <div class="hero-text">
+
+
+        <div class="badge">
+            🏫 Built for Students, by Students
+        </div>
+
+
+        <h1>
+
+            Buy Smart.<br>
+
+            <span>Sell on Campus.</span>
+
+        </h1>
+
+
+        <p>
+
+            Give your unused stuff a second life.
+            Buy and sell books, uniforms,
+            electronics and more within your
+            university community.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#products"
+                class="primary"
+            >
+                Explore Items →
+            </a>
+
+
+            <button
+                class="secondary"
+                onclick="openSell()"
+            >
+                Sell Something
+            </button>
+
+        </div>
+
+
+        <div class="stats">
+
+
+            <div>
+
+                <b>500+</b>
+
+                <small>Students</small>
+
+            </div>
+
+
+            <div>
+
+                <b>120+</b>
+
+                <small>Items Listed</small>
+
+            </div>
+
+
+            <div>
+
+                <b>₹50K+</b>
+
+                <small>Money Saved</small>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- HERO CARD -->
+
+    <div class="hero-card">
+
+
+        <div class="floating">
+            🔥 Popular
+        </div>
+
+
+        <div class="big-emoji">
+            ⌚
+        </div>
+
+
+        <h3>
+            Smart Watch
+        </h3>
+
+
+        <p>
+            Posted by Rahul • CSE 3rd Year
+        </p>
+
+
+        <strong>
+            ₹1,499
+        </strong>
+
+
+        <button
+            onclick="showMessage('Smart Watch')"
+        >
+            View Item
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     MARKETPLACE
+========================================== -->
+
+<section
+    class="market"
+    id="products"
+>
+
+
+    <div class="section-heading">
+
+
+        <div>
+
+            <p class="mini-title">
+                CAMPUS MARKETPLACE
+            </p>
+
+
+            <h2>
+                Find what you need.
+            </h2>
+
+        </div>
+
+
+
+        <div class="search">
+
+            🔍
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search books, watch, calculator..."
+                onkeyup="searchItems()"
+            >
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+
+        <button
+            class="active"
+            onclick="filterItems('all', this)"
+        >
+            All
+        </button>
+
+
+        <button
+            onclick="filterItems('books', this)"
+        >
+            📚 Books
+        </button>
+
+
+        <button
+            onclick="filterItems('electronics', this)"
+        >
+            💻 Electronics
+        </button>
+
+
+        <button
+            onclick="filterItems('fashion', this)"
+        >
+            👕 Fashion
+        </button>
+
+
+        <button
+            onclick="filterItems('hostel', this)"
+        >
+            🛏️ Hostel
+        </button>
+
+
+        <button
+            onclick="filterItems('others', this)"
+        >
+            ✨ Others
+        </button>
+
+
+    </div>
+
+
+
+    <!-- PRODUCTS -->
+
+    <div
+        class="products"
+        id="productGrid"
+    >
+
+        <!-- PRODUCTS FROM SUPABASE WILL APPEAR HERE -->
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     HOW IT WORKS
+========================================== -->
+
+<section
+    class="how"
+    id="how"
+>
+
+
+    <p class="mini-title">
+        SIMPLE & SAFE
+    </p>
+
+
+    <h2>
+        How CampusKart works
+    </h2>
+
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div>📸</div>
+
+            <h3>
+                1. List Your Item
+            </h3>
+
+            <p>
+                Upload your unused item and
+                set your price.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div>🔎</div>
+
+            <h3>
+                2. Find What You Need
+            </h3>
+
+            <p>
+                Search items listed by students
+                around your campus.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div>🤝</div>
+
+            <h3>
+                3. Meet & Exchange
+            </h3>
+
+            <p>
+                Connect with the seller and
+                complete the deal.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     SELL ITEM MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="sellModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <button
+            class="close"
+            onclick="closeSell()"
+        >
+            ×
+        </button>
+
+
+        <p class="mini-title">
+            SELL ON CAMPUSKART
+        </p>
+
+
+        <h2>
+            List your item
+        </h2>
+
+
+        <input
+            id="itemName"
+            type="text"
+            placeholder="Item name"
+        >
+
+
+        <input
+            id="itemPrice"
+            type="number"
+            placeholder="Price (₹)"
+        >
+
+
+        <select id="itemCategory">
+
+            <option value="others">
+                Category
+            </option>
+
+            <option value="books">
+                Books
+            </option>
+
+            <option value="electronics">
+                Electronics
+            </option>
+
+            <option value="fashion">
+                Fashion
+            </option>
+
+            <option value="hostel">
+                Hostel
+            </option>
+
+            <option value="others">
+                Others
+            </option>
+
+        </select>
+
+
+        <input
+            id="sellerName"
+            type="text"
+            placeholder="Your name"
+        >
+
+
+        <input
+            id="sellerPhone"
+            type="tel"
+            placeholder="Contact number"
+        >
+
+
+        <label class="image-label">
+
+            📸 Product Photo
+
+            <input
+                id="itemImage"
+                type="file"
+                accept="image/*"
+            >
+
+        </label>
+
+
+        <textarea
+            id="itemDescription"
+            placeholder="Short description"
+        ></textarea>
+
+
+        <button
+            class="submit"
+            onclick="addItem()"
+        >
+            Publish Item 🚀
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     LOGIN / SIGN UP MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="authModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <button
+            class="close"
+            onclick="closeAuth()"
+        >
+            ×
+        </button>
+
+
+        <p class="mini-title">
+            CAMPUSKART ACCOUNT
+        </p>
+
+
+        <h2 id="authTitle">
+            Welcome Back 👋
+        </h2>
+
+
+        <input
+            id="authEmail"
+            type="email"
+            placeholder="University Email"
+        >
+
+
+        <input
+            id="authPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+
+        <button
+            class="submit"
+            onclick="loginUser()"
+            id="loginButton"
+        >
+            Login
+        </button>
+
+
+        <p
+            style="
+                text-align:center;
+                margin-top:18px;
+                color:#777;
+            "
+        >
+
+            New here?
+
+
+            <button
+                onclick="signupUser()"
+                style="
+                    background:none;
+                    color:#6c4df6;
+                    font-weight:bold;
+                "
+            >
+                Create Account
+            </button>
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     PRODUCT DETAILS MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="productModal"
+>
+
+
+    <div
+        class="modal-box product-modal"
+    >
+
+
+        <button
+            class="close"
+            onclick="closeProduct()"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="detail-emoji"
+            id="detailEmoji"
+        >
+            📦
+        </div>
+
+
+        <span
+            class="tag"
+            id="detailCategory"
+        >
+            Category
+        </span>
+
+
+        <h2 id="detailName">
+            Product Name
+        </h2>
+
+
+        <h3
+            class="detail-price"
+            id="detailPrice"
+        >
+            ₹0
+        </h3>
+
+
+        <p class="seller-text">
+
+            👤 Seller:
+
+            <strong id="detailSeller">
+                Seller
+            </strong>
+
+        </p>
+
+
+        <p
+            class="detail-description"
+            id="detailDescription"
+        >
+            Product description
+        </p>
+
+
+        <button
+            class="contact-btn"
+            onclick="openChat()"
+        >
+            💬 Chat with Seller
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     CHAT MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="chatModal"
+>
+
+
+    <div
+        class="modal-box chat-box"
+    >
+
+
+        <button
+            class="close"
+            onclick="closeChat()"
+        >
+            ×
+        </button>
+
+
+        <p class="mini-title">
+            CAMPUS CHAT
+        </p>
+
+
+        <h2 id="chatSellerName">
+            Chat with Seller
+        </h2>
+
+
+        <!-- MESSAGES -->
+
+        <div
+            class="chat-messages"
+            id="chatMessages"
+        >
+
+            <p class="empty-chat">
+                Start a conversation with the seller 💬
+            </p>
+
+        </div>
+
+
+        <!-- MESSAGE INPUT -->
+
+        <div class="chat-input-area">
+
+
+            <input
+                id="chatInput"
+                type="text"
+                placeholder="Type your message..."
+                onkeydown="handleChatKey(event)"
+            >
+
+
+            <button
+                class="send-btn"
+                onclick="sendMessage()"
+            >
+                ➤
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     TOAST
+========================================== -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+
+    <div class="logo">
+        🎓 Campus<span>Kart</span>
+    </div>
+
+
+    <p>
+        Turning unused stuff into useful opportunities.
+    </p>
+
+
+    <p>
+        © 2026 CampusKart • Made for the campus community
+    </p>
+
+
+</footer>
+
+
+
+<!-- ==========================================
+     SCRIPTS
+========================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

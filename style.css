@@ -1,0 +1,700 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fc;
+    color: #171a2b;
+}
+
+header {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #6c4df6;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #6c4df6;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.sell-btn {
+    background: #6c4df6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 650px;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    background:
+        radial-gradient(circle at 80% 30%, #e9e2ff, transparent 30%),
+        #f7f8fc;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+    background: #eeeaff;
+    color: #6044e9;
+    padding: 9px 15px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #6c4df6;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #666;
+    max-width: 560px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary,
+.secondary {
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.primary {
+    background: #6c4df6;
+    color: white;
+}
+
+.secondary {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 50px;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stats b {
+    font-size: 23px;
+}
+
+.stats small {
+    color: #777;
+}
+
+.hero-card {
+    width: 330px;
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 25px 70px #30206b20;
+    transform: rotate(3deg);
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #fff0d5;
+    color: #ad6a00;
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.big-emoji {
+    height: 220px;
+    background: #eeeaff;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.hero-card h3 {
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.hero-card p {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.hero-card strong {
+    font-size: 25px;
+}
+
+.hero-card button {
+    float: right;
+    background: #171a2b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+.market {
+    padding: 90px 8%;
+    background: white;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+}
+
+.mini-title {
+    color: #6c4df6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-heading h2,
+.how h2 {
+    font-size: 40px;
+}
+
+.search {
+    width: 350px;
+    padding: 13px 17px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.categories button {
+    background: #f2f2f6;
+    padding: 11px 17px;
+    border-radius: 30px;
+    color: #555;
+}
+
+.categories button.active,
+.categories button:hover {
+    background: #6c4df6;
+    color: white;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    border: 1px solid #eee;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .3s;
+    background: white;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 50px #00000012;
+}
+
+.product-image {
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+.book {
+    background: #fff1df;
+}
+
+.tech {
+    background: #e8f0ff;
+}
+
+.fashion {
+    background: #ffe9ef;
+}
+
+.hostel {
+    background: #e8f8ef;
+}
+
+.headphones {
+    background: #eee9ff;
+}
+
+.code {
+    background: #e5f7f6;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.tag {
+    background: #eeeaff;
+    color: #6044e9;
+    padding: 5px 9px;
+    font-size: 11px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.product-info h3 {
+    margin: 14px 0 7px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 13px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bottom strong {
+    font-size: 21px;
+}
+
+.bottom button {
+    background: transparent;
+    color: #6c4df6;
+    font-weight: bold;
+}
+
+.how {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.step {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+}
+
+.step div {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #777;
+    line-height: 1.6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #00000080;
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-box {
+    width: 450px;
+    max-width: 100%;
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    position: relative;
+}
+
+.modal-box h2 {
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    background: none;
+}
+
+.modal-box input,
+.modal-box select,
+.modal-box textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 13px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    outline: none;
+    font-family: inherit;
+}
+
+.modal-box textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit {
+    width: 100%;
+    background: #6c4df6;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #171a2b;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+footer {
+    background: #171a2b;
+    color: white;
+    padding: 45px 8%;
+}
+
+footer p {
+    color: #aaa;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    header {
+        padding: 0 5%;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 350px;
+        align-self: center;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+}
+.login-btn {
+    background: white;
+    color: #6c4df6;
+    border: 1px solid #ddd;
+    padding: 11px 17px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.login-btn:hover {
+    background: #f1eeff;
+}
+/* PRODUCT DETAILS */
+
+.product-modal {
+    text-align: left;
+}
+
+.detail-emoji {
+    height: 180px;
+    background: #eeeaff;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    margin-bottom: 25px;
+}
+
+.detail-price {
+    font-size: 30px;
+    margin: 15px 0;
+    color: #6c4df6;
+}
+
+.seller-text {
+    color: #555;
+    margin: 15px 0;
+}
+
+.detail-description {
+    color: #777;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 15px;
+    background: #6c4df6;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.image-label {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 13px;
+    border: 1px dashed #bbb;
+    border-radius: 9px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    background: #fafafa;
+}
+
+.image-label input {
+    margin-top: 10px;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    background: transparent;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-emoji img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+/* CHAT */
+
+.chat-box {
+    max-width: 520px;
+}
+
+.chat-messages {
+    height: 320px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f7f8fc;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.chat-message {
+    max-width: 75%;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.my-message {
+    margin-left: auto;
+    background: #6c4df6;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.their-message {
+    margin-right: auto;
+    background: white;
+    color: #333;
+    border: 1px solid #eee;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    margin-bottom: 0 !important;
+}
+
+.send-btn {
+    width: 50px;
+    flex-shrink: 0;
+    background: #6c4df6;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.send-btn:hover {
+    background: #5839d9;
+}
+
+.empty-chat {
+    text-align: center;
+    color: #888;
+    padding: 100px 10px;
+}
